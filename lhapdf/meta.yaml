@@ -1,0 +1,34 @@
+package:
+    name: lhapdf
+    version: "6.1.6"
+
+source:
+    url: http://www.hepforge.org/archive/lhapdf/LHAPDF-6.1.6.tar.gz
+    md5: cbcb12cc5f6f5c763a3a13ce5e31169f
+    fn: LHAPDF-6.1.6.tar.gz
+    patches:
+        - fixpy3.patch
+
+requirements:
+    build: 
+        - python 
+        - boost
+        - gcc
+        - cython
+        - libgcc
+    run:
+        - boost
+        - libgcc
+        - python 
+
+build:
+    number: 3
+    detect_binary_files_with_prefix: True
+
+test:
+    commands:
+        - lhapdf-config
+
+about:
+    home: https://lhapdf.hepforge.org/
+    license: UNKNOWN
