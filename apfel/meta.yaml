@@ -7,12 +7,17 @@ source:
     git_rev: master
 requirements:
     build: 
+        - python >3.4
         - gcc
         - libgcc
+        - lhapdf
     run:
         - libgcc
+        - lhapdf
+        - python >3.4
 
 build:
+    number: 2
     detect_binary_files_with_prefix: True
 
 test:
