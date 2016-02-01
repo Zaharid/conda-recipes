@@ -11,7 +11,7 @@ source:
 
 requirements:
     build: 
-        - python >3.4
+        - python
         - boost
         - gcc
         - cython
@@ -19,7 +19,7 @@ requirements:
     run:
         - boost
         - libgcc
-        - python >3.4
+        - python
 
 build:
     number: 6
