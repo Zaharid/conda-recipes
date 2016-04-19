@@ -28,6 +28,7 @@ build:
 test:
     commands:
         - lhapdf-config
+        - python -c "import lhapdf"
 
 about:
     home: https://lhapdf.hepforge.org/
