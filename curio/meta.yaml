@@ -1,0 +1,17 @@
+package:
+    name: curio
+    version: {{ environ.get('GIT_DESCRIBE_TAG')  }}+git.{{ environ.get('GIT_DESCRIBE_NUMBER', 0) }}
+
+source:
+    git_url: https://github.com/dabeaz/curio
+    git_rev: master
+
+requirements:
+    build:
+        - setuptools
+    run:
+        - python >3.5
+
+about:
+    home: https://curio.readthedocs.io/en/latest/
+    licence_file: LICENSE
