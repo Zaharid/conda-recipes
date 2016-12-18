@@ -12,12 +12,11 @@ build:
 
 requirements:
   build:
-    - gcc >5
+    - toolchain # [osx]
     - cmake
     - boost
   run:
     - boost
-    - libgcc >5
 
 about:
   home: https://code.google.com/p/yaml-cpp/
