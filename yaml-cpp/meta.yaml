@@ -7,15 +7,17 @@ source:
   git_rev: release-0.5.3
 
 build:
-  number: 0
+  number: 3
   binary_relocation: true
 
 requirements:
   build:
+    - gcc >5
     - cmake
     - boost
   run:
     - boost
+    - libgcc >5
 
 about:
   home: https://code.google.com/p/yaml-cpp/
