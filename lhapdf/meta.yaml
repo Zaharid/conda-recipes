@@ -14,11 +14,9 @@ requirements:
         - toolchain
         - python
         - boost
-        - gcc
         - cython
     run:
         - boost
-        - libgcc
         - python
 
 build:
