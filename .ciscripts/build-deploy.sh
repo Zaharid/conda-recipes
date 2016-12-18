@@ -1,6 +1,6 @@
 #/usr/bin/bash
 set -u
-set -o xtrace
+set -v
 
 #Find conda
 source ~/.bashrc

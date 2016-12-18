@@ -1,4 +1,8 @@
 #!/bin/bash
 
-find . -maxdepth 1 -not -path './\.*' -not -path . -type d -print0 |\
-xargs -0 .ciscripts/build-deploy.sh
+for recipe in \
+$(find . -maxdepth 1 -not -path './\.*' -not -path . -type d);\
+do
+echo "Building ${recipe}"
+.ciscripts/build-deploy.sh "$recipe"
+done
