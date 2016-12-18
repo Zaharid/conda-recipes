@@ -1,4 +1,5 @@
 #/usr/bin/bash
+set -u
 
 #Find conda
 source ~/.bashrc
