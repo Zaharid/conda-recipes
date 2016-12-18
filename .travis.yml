@@ -33,5 +33,5 @@ install:
       conda install --yes conda-build
 
 script:
-  - ./.ciscripts/build-deploy.sh lhapdf
+  - ./.ciscripts/build-all.sh
 
