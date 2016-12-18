@@ -9,6 +9,8 @@ osx_image: beta-xcode6.1
 env:
   matrix:
     - CONDA_PY=35
+    - CONDA_PATH=/Users/travis/miniconda3
+    - OUTPUT_ARCH=osx-64
 
 
 before_install:
@@ -30,5 +32,5 @@ install:
       conda install --yes conda-build
 
 script:
-  - conda build ./lhapdf
+  - ./.ciscripts/build-deploy.sh lhapdf
 
