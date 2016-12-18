@@ -1,5 +1,5 @@
 #!/bin/bash
-CC=cc CXX=c++ ./configure --prefix=$PREFIX 
+./configure --prefix=$PREFIX 
 make -j${CPU_COUNT}
 make install
 
