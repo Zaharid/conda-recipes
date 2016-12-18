@@ -10,7 +10,8 @@ fi
 
 
 echo "Uploading package to zigzah"
-KEY=$( mktemp )
+#Idiotic mac mktemp
+KEY=$( mktemp -d "${TMPDIR:-/tmp}/key.XXXXXXXXX" )
 #This is defined in the Gitlab variables, under the Settings Menu.
 echo "$ZIGZAH_SSH_KEY" | base64 --decode > "$KEY"
 
