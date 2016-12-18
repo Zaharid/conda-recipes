@@ -7,10 +7,10 @@ os: osx
 osx_image: beta-xcode6.1
 
 env:
-  matrix:
     - CONDA_PY=35
     - CONDA_PATH=/Users/travis/miniconda3
     - OUTPUT_ARCH=osx-64
+    - OUTPUT_CHANNEL=conda-pkgs
 
 
 before_install:

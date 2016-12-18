@@ -16,7 +16,7 @@ echo "$ZIGZAH_SSH_KEY" | base64 --decode > "$KEY"
 
 scp -i "$KEY" -o StrictHostKeyChecking=no\
     ${CONDA_PATH}/conda-bld/${OUTPUT_ARCH}/*.tar.bz2 \
-    dummy@zigzah.com:~/conda-pkgs-private/${OUTPUT_ARCH}
+    dummy@zigzah.com:~/${OUTPUT_CHANNEL}/${OUTPUT_ARCH}
 
 if [ $? == 0 ]; then
 	echo "Upload suceeded"
