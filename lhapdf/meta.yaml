@@ -11,6 +11,7 @@ source:
 
 requirements:
     build: 
+        - libgcc
         - toolchain
         - python
         - boost
