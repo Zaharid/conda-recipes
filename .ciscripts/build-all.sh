@@ -1,4 +1,6 @@
 #!/bin/bash
+set -e
+set -u
 
 for recipe in \
 $(find . -maxdepth 1 -not -path './\.*' -not -path . -type d);\
