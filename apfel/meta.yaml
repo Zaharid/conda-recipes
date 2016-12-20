@@ -9,11 +9,12 @@ requirements:
     build: 
         - toolchain # [osx]
         - python >3.4
-        - gcc # [linux]
+        - gcc
         - libgcc # [linux]
         - lhapdf
     run:
         - libgcc # [linux]
+        - libgfortran # [osx]
         - lhapdf
         - python >3.4
 
