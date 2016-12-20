@@ -7,6 +7,7 @@ source:
     git_rev: master
 requirements:
     build: 
+        - toolchain # [osx]
         - python >3.4
         - gcc # [linux]
         - libgcc # [linux]
@@ -17,7 +18,7 @@ requirements:
         - python >3.4
 
 build:
-    number: 4
+    number: 5
     detect_binary_files_with_prefix: True
 
 test:
