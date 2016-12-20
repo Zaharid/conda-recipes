@@ -8,16 +8,16 @@ source:
 requirements:
     build: 
         - python >3.4
-        - gcc
-        - libgcc
+        - gcc # [linux]
+        - libgcc # [linux]
         - lhapdf
     run:
-        - libgcc
+        - libgcc # [linux]
         - lhapdf
         - python >3.4
 
 build:
-    number: 3
+    number: 4
     detect_binary_files_with_prefix: True
 
 test:
