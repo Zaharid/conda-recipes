@@ -11,6 +11,9 @@ requirements:
         - setuptools
     run:
         - python >3.5
+test:
+    requires:
+        - numpy
 
 about:
     home: https://curio.readthedocs.io/en/latest/
