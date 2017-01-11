@@ -12,11 +12,13 @@ source:
 requirements:
     build: 
         - toolchain
+        - gcc # [linux]
         - python
         - boost
         - cython
     run:
         - boost
+        - libgcc # [linux]
         - python
 
 build:
