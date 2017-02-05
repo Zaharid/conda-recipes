@@ -13,6 +13,10 @@ env:
     - OUTPUT_ARCH=osx-64
     - OUTPUT_CHANNEL=conda-pkgs
 
+  matrix:
+    - CONDA_PY=35
+    - CONDA_PY=36
+
 
 before_install:
     # Remove homebrew.
