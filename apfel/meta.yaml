@@ -8,6 +8,7 @@ source:
 requirements:
     build:
         - toolchain # [osx]
+        - gcc # [osx]
         - python
         - lhapdf
     run:
