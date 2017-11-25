@@ -5,6 +5,7 @@ package:
 source:
     url: https://github.com/jbeder/yaml-cpp/archive/yaml-cpp-0.5.3.tar.gz
     fn:  yaml-cpp-0.5.3.tar.gz
+    md5: 2bba14e6a7f12c7272f87d044e4a7211
 
 build:
   number: 4
