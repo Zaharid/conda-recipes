@@ -8,6 +8,8 @@ source:
     fn: LHAPDF-6.2.1.tar.gz
 
 requirements:
+    build:
+        - {{compiler('cxx')}}
     host:
         - python
         - cython
@@ -15,7 +17,7 @@ requirements:
         - python
 
 build:
-    number: 0
+    number: 1
     detect_binary_files_with_prefix: True
 
 test:

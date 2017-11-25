@@ -7,8 +7,9 @@ source:
     git_rev: master
 requirements:
     build:
-        - toolchain # [osx]
-        - gcc # [osx]
+        - {{compiler('cxx')}}
+        - {{compiler('fortran')}}
+    host:
         - python
         - lhapdf
     run:

@@ -7,12 +7,12 @@ source:
     fn:  yaml-cpp-0.5.3.tar.gz
 
 build:
-  number: 3
+  number: 4
   binary_relocation: true
 
 requirements:
   build:
-    - toolchain # [osx]
+    - {{ compiler('cxx') }}
     - cmake
   host:
     - boost
