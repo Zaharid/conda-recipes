@@ -32,8 +32,8 @@ install:
       bash $MINICONDA_FILE -b
 
       source /Users/travis/miniconda3/bin/activate root
-      conda config --add channels conda-forge
-      conda config --add channels https://zigzah.com/static/conda-pkgs
+      conda config --append channels conda-forge
+      conda config --prepend channels https://zigzah.com/static/conda-pkgs
       conda config --set show_channel_urls true
       conda install --yes conda-build
 
