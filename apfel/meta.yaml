@@ -9,8 +9,6 @@ requirements:
     build:
         - toolchain # [osx]
         - python
-        - gcc
-        - libgcc # [linux]
         - lhapdf
     run:
         - libgcc # [linux]
