@@ -1,0 +1,29 @@
+# HG changeset patch
+# User Zahari Kassabov <kassabov@to.infn.it>
+# Date 1511726126 -3600
+#      Sun Nov 26 20:55:26 2017 +0100
+# Branch lhapdfv6
+# Node ID 31bfcf78ea09a133d9ea6e380853623d31704ab3
+# Parent  25da64d79acdbbec887558d01ff46b61e9497882
+Make path volatile
+
+This prevents the compile time #define form being optimized out as
+a constant, rather than fetched from the corrsponding section of the
+binary file. The reason is to avoid interfering with the binary
+relocaion performed by conda.
+
+diff -r 25da64d79acd -r 31bfcf78ea09 src/Paths.cc
+--- src/Paths.cc	Wed Nov 08 13:42:39 2017 +0000
++++ src/Paths.cc	Sun Nov 26 20:55:26 2017 +0100
+@@ -21,8 +21,9 @@
+     vector<string> rtn = split(spathsvar, ":");
+     // Look in the install prefix after other paths are exhausted, if not blocked by a trailing ::
+     if (spathsvar.length() < 2 || spathsvar.substr(spathsvar.length()-2) != "::") {
+-      const string datadir = string(LHAPDF_DATA_PREFIX) / "LHAPDF";
+-      rtn.push_back(datadir );
++	   volatile auto p = LHAPDF_DATA_PREFIX;
++      const string datadir = string(p) / "LHAPDF";
++      rtn.push_back(datadir);
+     }
+     return rtn;
+   }

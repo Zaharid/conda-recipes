@@ -6,6 +6,8 @@ source:
     url: http://www.hepforge.org/archive/lhapdf/LHAPDF-6.2.1.tar.gz
     md5: 9e05567d538fdb4862d4781cd076d7db
     fn: LHAPDF-6.2.1.tar.gz
+    patches:
+        - make_path_volatile.patch
 
 requirements:
     build:
@@ -17,7 +19,7 @@ requirements:
         - python
 
 build:
-    number: 1
+    number: 2
     detect_binary_files_with_prefix: True
 
 test:
