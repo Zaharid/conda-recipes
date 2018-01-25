@@ -8,6 +8,7 @@ source:
     fn: LHAPDF-6.2.1.tar.gz
     patches:
         - make_path_volatile.patch
+        - fix_config_singleton.patch
 
 requirements:
     build:
@@ -19,7 +20,7 @@ requirements:
         - python
 
 build:
-    number: 2
+    number: 3
     detect_binary_files_with_prefix: True
 
 test:
