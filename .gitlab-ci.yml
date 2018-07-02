@@ -18,3 +18,8 @@ job2:
         CONDA_PY: "36"
     stage: build-deploy
     script: ".ciscripts/build-all.sh"
+job3:
+    variables:
+        CONDA_PY: "37"
+    stage: build-deploy
+    script: ".ciscripts/build-all.sh"
