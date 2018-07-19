@@ -4,6 +4,6 @@ make -j${CPU_COUNT}
 make install
 
 cd wrappers
-make lhapdf.cpp
+cython --cplus lhapdf.pyx
 make
 make install
