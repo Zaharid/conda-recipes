@@ -3,6 +3,7 @@ set -e
 set -u
 
 conda build .
+conda build lhapdf --python=2
 
 echo "Uploading package to zigzah"
 #Idiotic mac mktemp
