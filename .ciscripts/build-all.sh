@@ -2,8 +2,12 @@
 set -e
 set -u
 
-conda build .
-conda build lhapdf --python=2
+if [ "$#" -eq "0" ]
+then
+    conda build .
+else
+    conda build "$@"
+fi
 
 echo "Uploading package to zigzah"
 #Idiotic mac mktemp

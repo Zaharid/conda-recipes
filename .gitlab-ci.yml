@@ -23,3 +23,9 @@ job3:
         CONDA_PY: "37"
     stage: build-deploy
     script: ".ciscripts/build-all.sh"
+
+job4:
+    variables:
+        CONDA_PY: "27"
+    stage: build-deploy
+    script: ".ciscripts/build-all.sh lhapdf"
