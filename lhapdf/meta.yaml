@@ -1,14 +1,15 @@
+{% set version = "6.2.3" %}
+{% set filename = "LHAPDF-" + version + ".tar.gz" %}
+{% set checksum = "75cbcb90f6197e313614b9da252c9627" %}
+
 package:
     name: lhapdf
-    version: "6.2.1"
+    version: {{ version }}
 
 source:
-    url: http://www.hepforge.org/archive/lhapdf/LHAPDF-6.2.1.tar.gz
-    md5: 9e05567d538fdb4862d4781cd076d7db
-    fn: LHAPDF-6.2.1.tar.gz
-    patches:
-        - make_path_volatile.patch
-        - fix_config_singleton.patch
+    url: http://www.hepforge.org/archive/lhapdf/{{ filename }}
+    md5: {{ checksum }}
+    fn:  {{ filename }}
 
 requirements:
     build:
@@ -20,7 +21,7 @@ requirements:
         - python
 
 build:
-    number: 3
+    number: 1
     detect_binary_files_with_prefix: True
 
 test:
