@@ -12,8 +12,14 @@ jobs:
                 os: [ubuntu-latest]
                 python_version: ["3.7", "3.8", "3.9"]
         steps:
+          - name: Install SSH key
+            uses: shimataro/ssh-key-action@v2
+            with:
+                key: ${{ secrets.SSH_KEY }}
+                known_hosts: ${{ secrets.KNOWN_HOSTS }}
 
           - uses: actions/checkout@v2
+
           - uses: conda-incubator/setup-miniconda@v2
             with:
               auto-update-conda: true
@@ -25,3 +31,9 @@ jobs:
                 conda install conda-build --yes
                 conda build lhapdf
                 conda build apfel --use-local
+                if ["$RUNNER_OS" == "Linux"]; then
+                    OSFOLDER=linux-64
+                elif ["$RUNNER_OS" == "macos"]; then
+                    OSFOLDER=osx-64
+                fi
+                scp /usr/share/miniconda/conda-bld/${OSFOLDER}/* dummy@packages.nnpdf.science:~/packages/conda/${OSFOLDER}
