@@ -27,7 +27,6 @@ jobs:
           - name: Do Build
             shell: bash -l {0}
             run: |
-                conda activate
                 conda install conda-build --yes
                 conda build lhapdf
                 conda build apfel --use-local
