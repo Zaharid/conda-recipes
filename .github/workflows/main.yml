@@ -17,7 +17,7 @@ jobs:
           - uses: goanpeca/setup-miniconda@v1
             with:
               auto-update-conda: true
-              python-version: ${{os.python_version}}
+              python-version: ${{matrix.python_version}}
           - name: Do Build
             shell: bash -l {0}
             run: |
