@@ -24,6 +24,12 @@ jobs:
             with:
               auto-update-conda: true
               python-version: ${{matrix.python_version}}
+
+          - name: Get Mac OS SDK
+            if: runner.os == 'macOS'
+            run: |
+                curl -L -O https://data.nnpdf.science/MacOSX10.9.sdk.tar.xz;
+                sudo tar xfz MacOSX10.9.sdk.tar.xz -C /opt/;
           - name: Do Build
             shell: bash -l {0}
             run: |
@@ -36,10 +42,10 @@ jobs:
             run: |
                 if [ "$RUNNER_OS" = "Linux" ]; then
                     OSFOLDER=linux-64
-                elif [ "$RUNNER_OS" = "macos" ]; then
+                elif [ "$RUNNER_OS" = "macOS" ]; then
                     OSFOLDER=osx-64
                 else
-                    exit 1
+                    exit 41
                 fi
                 scp /usr/share/miniconda/envs/test/conda-bld/${OSFOLDER}/*.tar.bz2 dummy@packages.nnpdf.science:~/packages/conda/${OSFOLDER}
 
