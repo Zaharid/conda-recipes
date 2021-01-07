@@ -1,0 +1,27 @@
+name: Build
+
+on: [push]
+
+jobs:
+    build:
+
+        runs-on: ${{matrix.os}}
+
+        strategy:
+            matrix:
+                os: [ubuntu-latest, macos]
+                python_version: ["3.7", "3.8", "3.9"]
+        steps:
+
+          - uses: actions/checkout@v2
+          - uses: goanpeca/setup-miniconda@v1
+            with:
+              auto-update-conda: true
+              python-version: ${{os.python_version}}
+          - name: Do Build
+            shell: bash -l {0}
+            run: |
+                conda activate
+                conda install conda-build --yes
+                conda build lhapdf
+                conda build apfel --use-local
