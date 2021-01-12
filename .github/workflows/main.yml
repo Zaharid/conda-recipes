@@ -33,7 +33,7 @@ jobs:
           - name: Do Build
             shell: bash -l {0}
             run: |
-                conda install conda-build --yes
+                conda install conda-build=3.20 --yes
                 conda build lhapdf
                 conda build apfel --use-local
 
