@@ -1,4 +1,4 @@
-name: Build
+name: ARM64 build
 
 on: [push]
 
