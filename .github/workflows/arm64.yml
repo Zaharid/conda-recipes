@@ -27,8 +27,8 @@ jobs:
 
           - name: Get Mac OS SDK
             run: |
-                curl -L -O https://github.com/phracker/MacOSX-SDKs/releases/download/11.3/MacOSX11.0.sdk.tar.xz;
-                sudo tar xfz MacOSX11.0.sdk.tar.xz -C /opt/;
+                curl -L -O https://data.nnpdf.science/MacOSX10.9.sdk.tar.xz;
+                sudo tar xfz MacOSX10.9.sdk.tar.xz -C /opt/;
           - name: Do Build
             shell: bash -l {0}
             run: |
