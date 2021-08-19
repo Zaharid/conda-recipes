@@ -9,7 +9,6 @@ requirements:
     build:
         - {{compiler('cxx')}}
         - {{compiler('fortran')}}
-        - gnuconfig   # [unix]
     host:
         - python
         - lhapdf
