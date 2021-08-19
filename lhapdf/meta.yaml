@@ -13,7 +13,6 @@ source:
 
 requirements:
     build:
-        - gnuconfig   # [unix]
         - {{compiler('cxx')}}
     host:
         - python
