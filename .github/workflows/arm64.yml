@@ -1,4 +1,4 @@
-name: Build
+name: ARM64 build
 
 on: [push]
 
@@ -9,8 +9,8 @@ jobs:
 
         strategy:
             matrix:
-                os: [ubuntu-latest, macOS-latest]
-                python_version: ["3.7", "3.8", "3.9"]
+                os: [macOS-latest]
+                python_version: ["3.8"]
         steps:
           - name: Install SSH key
             uses: shimataro/ssh-key-action@v2
@@ -26,26 +26,18 @@ jobs:
               python-version: ${{matrix.python_version}}
 
           - name: Get Mac OS SDK
-            if: runner.os == 'macOS'
             run: |
                 curl -L -O https://github.com/phracker/MacOSX-SDKs/releases/download/11.3/MacOSX11.0.sdk.tar.xz;
                 sudo tar xfz MacOSX11.0.sdk.tar.xz -C /opt/;
           - name: Do Build
             shell: bash -l {0}
             run: |
-                conda install conda-build=3.20 --yes
-                conda build lhapdf
-                conda build apfel --use-local
+                conda install conda-build --yes
+                conda build lhapdf -c conda-forge -m cross-compile.yml
+                conda build apfel -c conda-forge -m cross-compile.yml --use-local
 
           - name: Upload
             shell: bash -l {0}
             run: |
-                if [ "$RUNNER_OS" = "Linux" ]; then
-                    OSFOLDER=linux-64
-                elif [ "$RUNNER_OS" = "macOS" ]; then
-                    OSFOLDER=osx-64
-                else
-                    exit 41
-                fi
-                scp ${CONDA_PREFIX}/conda-bld/${OSFOLDER}/*.tar.bz2 dummy@packages.nnpdf.science:~/packages/conda/${OSFOLDER}
+                scp ${CONDA_PREFIX}/conda-bld/osx-arm64/*.tar.bz2 dummy@packages.nnpdf.science:~/packages/conda/osx-arm64
 
