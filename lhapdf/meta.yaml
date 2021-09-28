@@ -1,6 +1,6 @@
-{% set version = "6.3.0" %}
+{% set version = "6.4.0" %}
 {% set filename = "LHAPDF-" + version + ".tar.gz" %}
-{% set checksum = "005cb5ee3506ad9b4980adac69fffb8b" %}
+{% set checksum = "64687d7f7e5f6e0ac03408d2007bfe31" %}
 
 package:
     name: lhapdf
