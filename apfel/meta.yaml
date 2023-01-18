@@ -10,11 +10,9 @@ requirements:
         - {{compiler('cxx')}}
         - {{compiler('fortran')}}
     host:
-        - python
         - lhapdf
     run:
         - lhapdf
-        - python
 
 build:
     number: 9
