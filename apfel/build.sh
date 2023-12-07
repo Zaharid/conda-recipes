@@ -1,5 +1,5 @@
 #!/bin/bash
-export FFLAGS=$(echo $FFLAGS | sed 's/-fopenmp/-fno-automatic/g')
-./configure --prefix=$PREFIX  --disable-pywrap
-make -j${CPU_COUNT}
-make install
+#
+cmake -S . -DCMAKE_INSTALL_PREFIX=$PREFIX  -DAPFEL_ENABLE_PYTHON=off build
+cmake --build build -j ${cpu_count}
+cmake --install build
